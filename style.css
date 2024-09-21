@@ -5,49 +5,27 @@ body {
 }
 
 .grid {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
-    height: calc(100svh - 80px);
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
+    height: 100svh;
+    width: calc(100svw - 90px);
 }
 
 .element {
+    display: inline-flex;
     background-size: cover;
     background-repeat: no-repeat;
     border: 1px solid #606060;
     border-radius: 1rem;
-}
-
-.element:nth-child(1), .element:nth-child(4) {
-    grid-row: span 2;
-}
-
-.element:nth-child(5) {
-    grid-row-start: 3;
+    height: 200px;
+    flex: 1 1 calc(25% - 1rem);
 }
 
 .element:nth-child(6) {
-    grid-row: span 2;
-    grid-column: span 2;
-}
-
-.element:nth-child(7) {
-    grid-row: span 2;
+    flex: 1 1 calc(50% - 1rem);
 }
 
 .element:nth-child(8) {
-    grid-column: span 2;
-}
-
-@media (max-width: 756px) {
-    .grid {
-        display: flex;
-        flex-direction: column;
-        gap: 10px
-    }
-    
-    .element {
-        min-height: 150px;
-    }
+    flex: 1 1 calc(75% - 1rem);
 }
